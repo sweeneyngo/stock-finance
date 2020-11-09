@@ -1,0 +1,23 @@
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block
+main %}
+<table class="table table-striped">
+  <thead>
+    <th>Symbol</th>
+    <th>Shares</th>
+    <th>Price</th>
+    <th>Date</th>
+  </thead>
+  {% if history %}
+  <tbody>
+    {% for record in history %}
+    <tr>
+      <td>{{record[0]}}</td>
+      <td>{{record[1]}}</td>
+      <td>{{record[2]}}</td>
+      <td>{{record[3]}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  {% endif %}
+</table>
+{% endblock %}
